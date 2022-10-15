@@ -78,5 +78,72 @@ svg {
 
 /* GENERAL STYLING */
 
+.mobile-nav-toggle{
+    display: none;
+    background-color: transparent;
+    border: none;
+}
+
+nav a{
+    text-decoration: none;
+    /*  */
+    color: black;
+}
+
+
+@media (max-width:50em){
+
+    .mobile-nav-toggle{
+        display: block;
+    }
+
+    #close-icon, #hamburger-icon{
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 20px;
+        width: 20px;
+    }
+
+    #close-icon{
+        display: none;
+    }
+        
+    .primary-nav{
+        display: none;
+        position: fixed;
+        inset: 3rem 3rem auto;
+        background-color: white;
+    }
+
+    .primary-header[data-overlay]::before{
+        content: '';
+        position: fixed;
+        inset: 0;
+        background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.8));
+    }
+
+    .nav-list{
+        display: grid;
+        justify-items: center;
+    }
+
+    .primary-nav[data-visible]{
+        display: block;
+    }
+}
 
 /* UTILITIES */
+
+.visually-hidden {
+    position: absolute;
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
