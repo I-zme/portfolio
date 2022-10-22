@@ -24,3 +24,28 @@ function toggleNavigation(){
     primaryNav.toggleAttribute('data-visible');
     primaryHeader.toggleAttribute('data-overlay');
 }
+
+
+
+const tl = gsap.timeline({
+    defaults: {duration:2}, 
+    onComplete: function(){
+        
+        this.reverse()
+    }
+});
+tl
+    .fromTo(".holder", {yPercent:-100}, {yPercent:0})
+    .fromTo(".holder img", {yPercent:-100}, {yPercent:0}, "<");
+    
+
+// tl.delayedCalle(reversed( !tl.reversed() ));
+
+const btn = document.querySelector('#click');
+btn.addEventListener('click', ()=>{
+    tl.pause();
+});
+
+// btn.on("click", function() {
+//   tl.reversed(!tl.reversed());
+// })

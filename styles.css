@@ -78,6 +78,15 @@ svg {
 
 /* GENERAL STYLING */
 
+.nav-list{
+    display: flex;
+    gap: clamp(2em, 5vw, 20em);
+}
+
+.nav-list li:first-child{
+    margin-left: auto;
+}
+
 .mobile-nav-toggle{
     display: none;
     background-color: transparent;
@@ -91,10 +100,51 @@ nav a{
 }
 
 
+/* welcome */
+
+#welcome-section{
+    height: 100vh;
+    width: 100%;
+    background-color: antiquewhite;
+}
+
+/* projects */
+
+#projects{
+    height: 100vh;
+    width: 100%;
+    background-color: cadetblue;
+}
+
+.project{
+    /* position: relative; */
+    /* background-color: cornflowerblue; */
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+
+}
+
+
+.holder{
+    overflow: hidden;
+}
+
+.holder img{
+    display: block;
+    object-fit: cover;
+    width: 100%;
+}
+
+
 @media (max-width:50em){
 
     .mobile-nav-toggle{
         display: block;
+    }
+
+    .nav-list li:first-child {
+        margin-left: 0;
     }
 
     #close-icon, #hamburger-icon{
