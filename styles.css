@@ -1,4 +1,64 @@
+@font-face {
+    font-family: "Walkway";
+    src: url("/fonts/Walkway-8azB.woff") format("woff"), url("/fonts/WalkwaySemibold-2Erw.woff") format("woff");
+}
+@font-face {
+    font-family: "Essence Sans";
+    src: url("/fonts/EssenceSans-zGYa.woff") format("woff"), url("/fonts/EssenceSansLight-90eZ.woff") format("woff"), url("fonts/EssenceSansLight-90eZ\ \(1\).woff") format("woff");
+}
+@font-face {
+    font-family: "Aspergit";
+    src: url("/fonts/Aspergit-1m0j.woff") format("woff"), url("/fonts/AspergitLight-Y0oy.woff") format("woff");
+}
+@font-face {
+    font-family: "Title Wave";
+    src: url("/fonts/TitleWaveRegular-l9ve.woff") format("woff");
+}
+@font-face {
+    font-family: "Aaargh";
+    src: url("/fonts/AaarghNormal-KZVl.woff") format("woff");
+}
+@font-face {
+    font-family: "Disco";
+    src: url("/fonts/Disco-4BGl.woff") format("woff");
+}
+
+
 :root{
+    --clr-neutral-100:#f8fafb;
+
+    --clr-accent-1-100:#002acb;
+    --clr-accent-1-200:#011460;
+    --clr-accent-1-300: #22263f;
+
+    --clr-accent-2-100:#f47f5c;
+    --clr-accent-2-200:#f0382c;
+    --clr-accent-2-300:#dc0000;
+    --clr-accent-2-400:#a00000;
+    --clr-accent-2-500:#440a0f;
+
+    --clr-accent-3-100:#ffc51d;
+    --clr-accent-3-200:#ffa71d;
+    --clr-accent-3-300:#f7941d;
+
+
+    --fs-100: 0.75rem;
+    --fs-200: 1rem;
+    --fs-300: 1.25rem;
+    --fs-400: 1.5rem;
+    --fs-500: 2rem;
+    --fs-600: 2.5rem;
+    --fs-700: 3rem;
+
+    --size-100:0.5rem;
+    --size-200: 0.875rem;
+    --size-300: 1rem;
+    --size-400: 1.25rem;
+    --size-500: 1.5rem;
+    --size-600: 2rem;
+    --size-700: 3rem;
+    --size-800: 4rem;
+
 
 }
 
@@ -29,8 +89,6 @@ ol[role='list'] {
 html:focus-within {
     scroll-behavior: smooth;
 }
-
-
 
 html, 
 body{
@@ -78,14 +136,20 @@ svg {
 
 /* GENERAL STYLING */
 
-.nav-list{
-    display: flex;
-    gap: clamp(2em, 5vw, 20em);
+.primary-header{
+
+    background-color: var(--clr-accent-1-200);
+    height: var(--size-700);
 }
 
-.nav-list li:first-child{
-    margin-left: auto;
+.nav-list{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10vw;
+    padding-right: 2vw;
+    font-family: "Aspergit";
 }
+
 
 .mobile-nav-toggle{
     display: none;
@@ -96,7 +160,7 @@ svg {
 nav a{
     text-decoration: none;
     /*  */
-    color: black;
+    color: var(--clr-neutral-100);
 }
 
 
@@ -105,34 +169,12 @@ nav a{
 #welcome-section{
     height: 100vh;
     width: 100%;
-    background-color: antiquewhite;
 }
 
 /* projects */
 
 #projects{
     height: 100vh;
-    width: 100%;
-    background-color: cadetblue;
-}
-
-.project{
-    /* position: relative; */
-    /* background-color: cornflowerblue; */
-    width: 400px;
-    height: 400px;
-    overflow: hidden;
-
-}
-
-
-.holder{
-    overflow: hidden;
-}
-
-.holder img{
-    display: block;
-    object-fit: cover;
     width: 100%;
 }
 
@@ -147,7 +189,7 @@ nav a{
         margin-left: 0;
     }
 
-    #close-icon, #hamburger-icon{
+    #close-icon, #menu-icon{
         position: absolute;
         top: 0;
         right: 0;
