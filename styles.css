@@ -224,21 +224,50 @@ section{
 
 /* projects */
 
+#projects{
+    display: grid;
+    grid-template-rows: max-content repeat(1, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: var(--size-500);
+    justify-items: center;
+
+}
+
+#projects .section-header{
+    grid-column: 1 / -1;
+}
+
 .project{
     --_title-height: 80px;
+    --_fs-title:var(--fs-400);
     width: 200px;
     height: var(--_title-height);
     display: grid;
     justify-content: center;
-    align-items: center;
     grid-template-rows: 0 var(--_title-height);
     overflow: hidden;
     transition: .3s ease all;
+}
+
+.row1{
     background-color: var(--clr-accent-2-300);
+}
+.row2{
+    background-color: var(--clr-accent-2-400);
+}
+.row3{
+    background-color: var(--clr-accent-2-500);
 }
 
 .project > *{
     padding: var(--size-100) ;
+}
+
+.project-title{
+    --_title-padding: calc((var(--_title-height) - var(--_fs-title)) / 2);
+    padding: var(--_title-padding) 0;
+    height: 100%;
+    width: 100%;
 }
 
 .project-link{
@@ -248,6 +277,7 @@ section{
 .project > img{
     height: 100%;
     width: 100%;
+    object-fit: cover;
 }
 
 .project:hover{
