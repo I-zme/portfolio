@@ -5,8 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="main.js" defer></script>
     
     <title>Document</title>
@@ -15,8 +13,8 @@
 
     <header class="primary-header">
         <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
-            <img id="hamburger-icon" src="img/three-horizontal-lines-outline-icon (1).svg" alt="" aria-hidden="true">
-            <img id="close-icon" src="img/close-icon.svg" alt="" aria-hidden="true">
+            <img id="menu-icon" src="img/water-wave-icon.svg" alt="" aria-hidden="true">
+            <img id="close-icon" src="img/ship-wheel-icon.svg" alt="" aria-hidden="true">
             <span class="visually-hidden">Menu</span>
         </button>
 
@@ -31,19 +29,24 @@
 
     <main>
         <section id="welcome-section">
-            <h1>Oh! Hi! come look, come on come on!</h1>
+            <div class="circle"></div>
+            <h1>Hey you!</h1>
+            <p>I'm Inbar, a web developer</p>
         </section>
 
-        <!-- <section id="projects">
-            <div class="project">
-                <h3 class="project-title">Travel Blog</h3>
-                <div class="holder">
-                    <img src="img/travelers-blog.png" alt="traveler's blog preview">
-                </div>
-            </div>
-            <button id="click">click me</button>
-        </section> -->
-        <section id="contact-me"></section>
+        <section id="projects">
+            <h2 class="section-header">a few of my projects</h2>
+            <a class="project-link" href="#" _blank="true"><div class="project">
+                <img src="img/travelers-blog.png" alt="travel blog preview">
+                <div class="project-title">Travel Blog</div>
+        </div></a>
+        </section>
+
+        <section id="contact-me">
+            <h2 class="section-header">talk to me</h2>
+            <a href=""><img src="" alt="github link"></a>
+            <a href=""><img src="" alt="e-mail link"></a>
+        </section>
     </main>
 
     <footer></footer>
