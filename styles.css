@@ -283,6 +283,7 @@ section {
     height: var(--_title-height);
     display: grid;
     justify-content: center;
+    text-align: center;
     grid-template-rows: 0 var(--_title-height);
     overflow: hidden;
     transition: .3s ease all;
