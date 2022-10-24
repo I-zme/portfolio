@@ -60,7 +60,7 @@
     --fs-800: 4rem;
     --fs-900: 5rem;
 
-
+    --fs-nav:var(--fs-200);
     --fs-primary-heading: var(--fs-900);
     --fs-secondary-heading: var(--fs-600);
 
@@ -74,7 +74,7 @@
     --size-800: 3rem;
     --size-900: 4rem;
 
-    --nav-height: var(--size-700);
+    --nav-height: 2.5rem;
 
     --ff-nav: "Essence Sans";
     --ff-primary-heading: "Walkway";
@@ -107,7 +107,7 @@ ol[role='list'] {
 }
 
 /* Set core root defaults */
-html:focus-within {
+html, html:focus-within {
     scroll-behavior: smooth;
 }
 
@@ -157,20 +157,23 @@ svg {
 
 /* GENERAL STYLING */
 
-
+/* header */
 .primary-header {
     position: fixed;
     width: 100%;
     background-color: var(--clr-accent-1-200);
     height: var(--nav-height);
+    z-index: 1000;
 }
 
 .nav-list {
     display: flex;
     justify-content: flex-end;
     gap: 10vw;
-    padding-right: 2vw;
+    padding-top: 8px;
+    padding-right: 5vw;
     font-family: "Aspergit";
+    font-size: var(--fs-nav);
 }
 
 
@@ -186,7 +189,39 @@ nav a {
 }
 
 
+/* section */
+.section-header {
+    font-size: var(--fs-secondary-heading);
+    font-weight: 600;
+    font-family: var(--ff-secondary-heading);
+    text-align: center;
+}
+
+section {
+    width: 100%;
+    padding-top: var(--nav-height);
+    color: var(--clr-accent-1-300);
+    font-family: var(--ff-body);
+}
+
+
 /* welcome */
+#welcome-section {
+    height: 100vh;
+}
+
+.circle {
+    position: absolute;
+    top: 15%;
+    left: -15%;
+    background: linear-gradient(var(--clr-accent-3-300), var(--clr-accent-3-100));
+    min-height: 300px;
+    height: 50vw;
+    max-height: 500px;
+    aspect-ratio: 1/1;
+    border-radius: 70% 60% 80% 50%;
+    z-index: -1;
+}
 
 #welcome-text{
     position: absolute;
@@ -208,6 +243,10 @@ nav a {
     text-indent: 1rem;
 }
 
+#welcome-text em{
+    font-weight: 800;
+}
+
 @media (max-width: 50em){
     :root{
         --fs-primary-heading:var(--fs-800);
@@ -219,48 +258,15 @@ nav a {
     }
 }
 
-.section-header {
-    font-size: var(--fs-secondary-heading);
-    font-weight: 600;
-    font-family: var(--ff-secondary-heading);
-}
-
-section {
-    padding-top: var(--nav-height);
-    color: var(--clr-accent-1-300);
-    font-family: var(--ff-body);
-}
-
-#welcome-section,
-#projects {
-    height: 100vh;
-    width: 100%;
-}
-
-
-
-.circle {
-    position: absolute;
-    top: 15%;
-    left: -15%;
-    background-color: var(--clr-accent-2-100);
-    min-height: 300px;
-    height: 50vw;
-    max-height: 500px;
-    aspect-ratio: 1/1;
-    border-radius: 70% 60% 80% 50%;
-    z-index: -1;
-}
-
-
 
 /* projects */
 
 #projects {
+    height: 60vh;
     display: grid;
     grid-template-rows: max-content repeat(1, max-content);
     grid-template-columns: repeat(3, 1fr);
-    row-gap: var(--size-500);
+    row-gap: var(--size-700);
     justify-items: center;
     align-items: start;
 
@@ -280,6 +286,8 @@ section {
     grid-template-rows: 0 var(--_title-height);
     overflow: hidden;
     transition: .3s ease all;
+    color: var(--clr-neutral-100);
+    font-weight: 600;
 }
 
 @media (min-width:30em) and (max-width:50em) {
@@ -349,8 +357,9 @@ section {
     #close-icon,
     #menu-icon {
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 50%;
+        translate: 0 -50%;
+        right: var(--size-500);
         height: 20px;
         width: 20px;
         filter: invert(1);
@@ -367,6 +376,7 @@ section {
         background-color: white;
         padding: var(--size-700) 0;
         border-radius: 110% 62% 93% 80%;
+        box-shadow: 1px 1px 0px 1px var(--clr-accent-2-500);
     }
 
     .primary-header[data-overlay]::before {
@@ -387,6 +397,49 @@ section {
         display: block;
     }
 }
+
+
+/* contact */
+#contact-me{
+    height: 60vh;
+    display: grid;
+    grid-template-rows: min-content 1fr 3fr;
+    row-gap: 1rem;
+}
+
+#contact-me > p{
+    font-size: var(--fs-400);
+    text-align: center;
+}
+
+#social-media{
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.social-icon{
+    height: 50px;
+    width: 50px;
+}
+
+#social-media a{
+    text-decoration: none;
+    color: inherit;
+
+}
+
+/* footer */
+footer{
+    height: 20vh;
+    line-height: var(--size-700);
+    padding: var(--size-400) var(--size-700);
+    background-color: #22263f;
+    font-family: var(--ff-body);
+    color: var(--clr-neutral-100);
+}
+
 
 /* UTILITIES */
 
